@@ -1,0 +1,24 @@
+<%= render 'users/list'%>
+
+<h2>Books</h2>
+
+
+
+<%= render 'users/list2', book: @book %>
+<table>
+	
+		<tr>
+			<th>image</th>
+			<th>title</th>
+			<th>option</th>
+		</tr>
+	<tbody>
+	<% @books.each do |book| %>
+	<tr>
+		<th>image </th>
+		<th><%= book.title %></th>
+		<th><%= book.option %></th>
+	</tr>
+	<% end %>
+</tbody>
+</table>

@@ -1,0 +1,47 @@
+
+
+<h2>Users</h2>
+
+
+<h2>User info<h2>
+
+<table class="table">
+	<tr>
+<th><h4 scope="col">image</h4></th>
+<td></td>
+</tr>
+<tr>
+<th><h4 scope="col">name</h4></th>
+<td><h4><%= @user.username %></h4></td>
+</tr>
+<tr>
+<th><h4 scope="col">introduction</h4></th>
+<td><h4><%= @user.introduction %></h4></td>
+</tr>
+</table>
+
+<%= link_to edit_user_path(@user.id), class: "btn btn-default" do %> 
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+<% end %>
+
+<%= render 'users/list2', book: @book %>
+
+
+<table class="table">
+	<thead>
+	
+		<tr>
+			<th scope="col">image</th>
+			<th scope="col">name</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+	<% @users.each do |user| %>
+	<tr>
+		<th><%= user.image %></th>
+		<th><%= user.username %></th>
+	</tr>
+	<% end %>
+</tbody>
+</table>

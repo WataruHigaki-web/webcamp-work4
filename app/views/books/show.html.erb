@@ -1,0 +1,16 @@
+<%= render 'users/list'%>
+<%= render 'users/list2', book: @book %>
+<h2>Book detail</h2>
+
+<table class="table">
+	<tbody>
+
+		
+		<td>image</td>
+		<td><%= @book.title%></td> 
+	    <td><%= @book.option %></td> 
+	    <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
+	    <td><%=link_to "Delete", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+	    
+	</tbody>
+</table>

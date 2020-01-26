@@ -1,0 +1,43 @@
+<header>
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-left" href="#">
+      <h2>Bookers</h2>
+  </a>
+</div>
+<table class="table table-striped">
+  <div class="collapse navbar-collapse" id="navbarEexample7">
+			<talbe class="nav navbar-nav">
+      
+        
+          <tr>
+            <th><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            	<%=link_to 'Home', root_path %></th>
+            <th><span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+            <%= link_to 'About', top_path %></th>
+            <th><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            	<%= link_to "Sign up", new_user_registration_path %></th>
+            <th><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+            	<%= link_to "Log in", new_user_session_path %></th>
+          </tr>
+
+        
+      </table>
+
+  </table>
+</div>
+</div>
+  </div>
+
+    </header>
+
+<h2>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers !!</h2>
+
+<h4>in <span class="glyphicon glyphicon-book" aria-hidden="true"></span>bookers,<br/>
+you can share and exchange your opinions, inpressions, and emotions<br/>
+about various books!</h4>
+
+<h2><%= link_to "Log in", new_user_session_path,  class: "btn btn-default" %></h2>
+<h2><%= link_to "Sign up", new_user_registration_path ,  class: "btn btn-default" %></h2>
+

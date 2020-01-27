@@ -1,16 +1,36 @@
-<%= render 'users/list'%>
-<%= render 'users/list2', book: @book %>
+<div class="row">
+	<div class="col-md-4">
+<%= render 'users/list', user: @user %>
+<%= render 'users/list2', book: @booknew %>
+</div>
+<div class="col-md-8">
 <h2>Book detail</h2>
-
 <table class="table">
-	<tbody>
 
-		
-		<td>image</td>
+	<thead>
+
+			    <th></th>
+				<th scope="col">Title</th>
+				<th scope="col">Opinion</th>
+			
+		</thead>
+
+	<tbody>
+		<td><%= attachment_image_tag @user, :profile_image, :fill, 50,50, fallback: "no_image.jpg" %></td>
 		<td><%= @book.title%></td> 
-	    <td><%= @book.option %></td> 
-	    <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
-	    <td><%=link_to "Delete", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+	    <td><%= @book.body %></td> 
+	    <td><% if @book.user == current_user %>
+	    	<%= link_to "Edit", edit_book_path(@book.id) %>
+	    		<% else %>
+	    	　　<% end %></td>
+	    <td><% if @book.user == current_user %>
+	    	<%=link_to "Delete", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+	    		<% else %>
+	    	　　<% end %>
+	    	</td>
 	    
 	</tbody>
 </table>
+</div>
+</div>
+

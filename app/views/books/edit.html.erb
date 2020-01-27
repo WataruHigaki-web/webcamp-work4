@@ -1,14 +1,13 @@
-<%= render 'users/list'%>
+
 
 <h2>Editing Book</h2>
 <%= form_for(@book) do |f|%>
-<h4>Title</h4>
+<h4>title</h4>
 <%= f.text_field :title %>
-<h4>Option</h4>
-<%= f.text_area :option %>
+<h4>option</h4>
+<%= f.text_area :body %>
 <%= f.submit 'Update Book' %>
 <% end %>
 
 <%= link_to 'Show', book_path(@book) %><spam>|</spam>
-</MAIN>
 <%= link_to 'Back', users_path %>

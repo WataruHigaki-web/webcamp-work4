@@ -1,27 +1,6 @@
 <div class="row">
 	<div class="col-md-4">
-		<h2>User info</h2>
-
-		<table class="table">
-			<tr>
-
-		<th><%= attachment_image_tag @user, :profile_image, :fill, 100,100 %></th>
-		</tr>
-		<tr>
-		<th><h4 scope="col">name</h4></th>
-		<td><h4><%= @user.username %></h4></td>
-		</tr>
-		<tr>
-		<th><h4 scope="col">introduction</h4></th>
-		<td><h4><%= @user.introduction %></h4></td>
-		</tr>
-		</table>
-
-		<%= link_to edit_user_path(@user.id), class: "btn btn-default" do %> 
-		<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-		<% end %>
-
-
+		<%= render 'users/list', user: @user %>
 		<%= render 'users/list2', book: @book %>
 	</div>
 
@@ -36,18 +15,18 @@
 
 			    <th></th>
 				<th scope="col">Title</th>
-				<th scope="col">Option</th>
+				<th scope="col">Opinion</th>
 			
 		</thead>
 			<tbody>
 		    
 				<% @books.each do |book|%>
 				<tr>
-				<td><%= attachment_image_tag @user, :profile_image, :fill, 50,50 %>
-					<%= book.user.username %>
+				<td><%= attachment_image_tag @user, :profile_image, :fill, 50,50, fallback: "no_image.jpg" %> %>
+					<%= book.user.name %>
 				</td>
 				<td><%= book.title %></td> 
-			    <td><%= book.option %></td> 
+			    <td><%= book.body %></td> 
 			</tr>
 			    <% end %>
 			

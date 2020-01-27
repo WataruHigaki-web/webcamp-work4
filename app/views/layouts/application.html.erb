@@ -11,26 +11,40 @@
 
   <body>
 <header>
-  <nav class="navbar navbar-inverse">
+  <nav class="bg-warning">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-left" href="#">
+      <a class="navbar" href="#">
       <h2>Bookers</h2>
   </a>
 </div>
 <table class="table table-striped">
   <div class="collapse navbar-collapse" id="navbarEexample7">
-      <talbe class="nav navbar-nav">
+
+      <table class="nav navbar-nav">
         
           <tr>
+            <% if user_signed_in? %>
             <th><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               <%=link_to 'Home', user_path(@user.id)%></th>
             <th><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <%=link_to 'Users', users_path(@user.id)%></th>
+              <%=link_to 'Users', users_path%></th>
             <th><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-              <%= link_to 'Books', books_path(@user.id) %></th>
+              <%= link_to 'Books', books_path%></th>
             <th><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
               <%= link_to "Log out", destroy_user_session_path, method: :delete %></th>
+            <% else %>
+
+            <th><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              <%=link_to 'Home', root_path %></th>
+            <th><span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+            <%= link_to 'About', about_path %></th>
+            <th><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+              <%= link_to "Sign up", new_user_registration_path %></th>
+            <th><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+              <%= link_to "login", new_user_session_path %></th>
+              <% end %>
+
            </tr>
 
         
@@ -42,6 +56,7 @@
   </div>
   </header>
     <%= flash[:notice] %>
+
     <div class="container">
       <%= yield %>
     </div>

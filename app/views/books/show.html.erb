@@ -1,11 +1,11 @@
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-xs-3">
 <%= render 'users/list', user: @user %>
 <%= render 'users/list2', book: @booknew %>
 </div>
-<div class="col-md-8">
+<div class="col-xs-9">
 <h2>Book detail</h2>
-<table class="table">
+<table class='table table-hover table-inverse'>
 
 	<thead>
 
@@ -16,15 +16,16 @@
 		</thead>
 
 	<tbody>
-		<td><%= attachment_image_tag @user, :profile_image, :fill, 50,50, fallback: "no_image.jpg" %></td>
+		<td><img class="attachment user profile_image">
+			<%= attachment_image_tag @user, :profile_image, :fill, 50,50, fallback: "no_image.jpg" %></td>
 		<td><%= @book.title%></td> 
 	    <td><%= @book.body %></td> 
 	    <td><% if @book.user == current_user %>
-	    	<%= link_to "Edit", edit_book_path(@book.id) %>
+	    	<%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-success" %>
 	    		<% else %>
 	    	　　<% end %></td>
 	    <td><% if @book.user == current_user %>
-	    	<%=link_to "Delete", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+	    	<%=link_to "Delete", book_path(@book.id) , class: "btn btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %>
 	    		<% else %>
 	    	　　<% end %>
 	    	</td>

@@ -2,14 +2,16 @@
 <html>
   <head>
     <title>Bookers</title>
-       <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="3IIPzXUUNR8zmEcmKSBb53mDTg7kGwFIyJN8cNoxIbf35a3eG6Shhv5JAekAC1X2h6liBSH48RlM9AXcPIBfdw==" />
- <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<!-- 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   </head>
+ 
 
   <body>
 <header class="navbar navbar-fixed-top navbar-inverse">
@@ -29,13 +31,13 @@
             <th><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
               <%= link_to 'Books', books_path%></th>
             <th><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %></th>
+              <%= link_to "logout", destroy_user_session_path, method: :delete %></th>
             <% else %>
 
             <th><span class="glyphicon glyphicon-home home" href="/"></span>
               <%=link_to 'Home', root_path %></th>
             <th><span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-            <%= link_to 'About', about_path %></th>
+            <%= link_to 'About', home_about_path %></th>
             <th><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
               <%= link_to "Sign up", new_user_registration_path %></th>
             <th><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>

@@ -1,4 +1,3 @@
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,18 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap-sprockets";
- @import "bootstrap";  
+ @import "bootstrap";
 
  footer{
  text-align: right;
- }
+}
+
 
 .body{
 	padding-top:70px;
 }
-.navbar navbar-fixed-top navbar-inverse　{
 
-	background-color:black;
-	text-color:white;
-}

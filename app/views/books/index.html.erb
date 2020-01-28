@@ -32,7 +32,8 @@
 			<%= attachment_image_tag @user, :profile_image, :fill, 50,50, fallback: "no_image.jpg" %>
 			<% end %>
 			</th>
-		<th><%= link_to (book_path(book))do %><%= book.title %>
+		<th><%= link_to (book_path(book)) do %>
+			<%= book.title %>
 			<% end %>
 		</th>
 		<th><%= book.body %></th>
